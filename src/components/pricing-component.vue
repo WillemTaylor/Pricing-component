@@ -6,39 +6,39 @@
     <h1>Our Pricing</h1>
     <div class="toggle-container">
       <h4>Annual</h4>
-      <toggle />
+      <toggle @checked="handleCheckbox" />
       <h4>Monthly</h4>
     </div>
 
     <div class="tile-container">
-      <div id="tile" class="price-tile">
+      <div class="price-tile">
         Basic
-        <h1>$19.99</h1>
-        <div class="divider"></div>500 GB storage
-        <div class="divider"></div>2 users allowed
-        <div class="divider"></div>Send up to 3 GB
-        <div class="divider"></div>
-        <button class="button" @click="handleClick($event)">LEARN MORE</button>
+        <h1>${{monthlyActive ? basicMonthly : 12 * Number(basicMonthly)}}</h1>
+        <hr />500 GB storage
+        <hr />2 users allowed
+        <hr />Send up to 3 GB
+        <hr />
+        <button class="button" @click="handleClick">LEARN MORE</button>
       </div>
 
-      <div id="tile" class="price-tile">
+      <div class="price-tile">
         Professional
-        <h1>$24.99</h1>
-        <div class="divider"></div>1 TB storage
-        <div class="divider"></div>5 users allowed
-        <div class="divider"></div>Send up to 10 GB
-        <div class="divider"></div>
-        <button class="button" @click="handleClick($event)">LEARN MORE</button>
+        <h1>${{monthlyActive ? profMonthly : 12 * Number(profMonthly)}}</h1>
+        <hr />1 TB storage
+        <hr />5 users allowed
+        <hr />Send up to 10 GB
+        <hr />
+        <button class="button" @click="handleClick">LEARN MORE</button>
       </div>
 
-      <div id="tile" class="price-tile">
+      <div class="price-tile">
         Master
-        <h1>$39.99</h1>
-        <div class="divider"></div>2 TB storage
-        <div class="divider"></div>10 users allowed
-        <div class="divider"></div>Send up to 20 GB
-        <div class="divider"></div>
-        <button class="button" @click="handleClick($event)">LEARN MORE</button>
+        <h1>${{monthlyActive ? masterMonthly : 12 * Number(masterMonthly)}}</h1>
+        <hr />2 TB storage
+        <hr />10 users allowed
+        <hr />Send up to 20 GB
+        <hr />
+        <button class="button" @click="handleClick">LEARN MORE</button>
       </div>
     </div>
   </div>
@@ -56,22 +56,30 @@ export default {
     LeftSwirl,
     Toggle
   },
+  data() {
+    return {
+      monthlyActive: false,
+      basicMonthly: "19.99",
+      profMonthly: "24.99",
+      masterMonthly: "39.99"
+    };
+  },
   methods: {
-    handleClick(event) {
-      let evt = event.target.parentElement.className;
+    handleCheckbox(value) {
+      this.monthlyActive = value;
+    },
+    handleClick() {
+      let evt = event.target.parentElement;
       let tile = document.querySelectorAll(".price-tile");
-      let btn = document.querySelectorAll(".button");
 
-      for (let i = 0; i < tile.length; i++) {
-        for (let j = 0; j < btn.length; j++) {
-          btn[j].classList.remove("active");
+      tile.forEach(el => {
+        if (el.classList.value === "price-tile active") {
+          el.classList.remove("active");
         }
-        tile[i].classList.remove("active");
-      }
+      });
 
-      if (evt !== "price-tile active") {
-        event.target.parentElement.classList.add("active");
-        event.target.classList.add("active");
+      if (evt.className !== "price-tile active") {
+        evt.classList.add("active");
       }
     }
   }

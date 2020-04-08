@@ -1,5 +1,4 @@
 @import 'variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 #app {
   width: 100%;
@@ -58,7 +57,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
+    margin: 100px auto;
+    max-width: 1100px;
+    padding: 0 30px;
   }
 }
 
@@ -70,10 +71,7 @@ body {
   padding: 20px;
   margin: 40px auto;
   border-radius: 10px;
-
-  &:last-of-type {
-    margin-bottom: 40px;
-  }
+  align-items: center;
 
   @media only screen and (min-width: $desktop) {
     display: flex;
@@ -84,8 +82,7 @@ body {
     margin: 0;
 
     &:nth-of-type(2) {
-      height: 440px;
-      margin-top: -22px;
+      margin: auto 20px;
     }
   }
 
@@ -96,6 +93,17 @@ body {
       hsl(237, 63%, 64%)
     );
     color: white;
+
+    @media only screen and (min-width: $desktop) {
+      height: 440px;
+      margin-top: -22px;
+    }
+
+    .button {
+      color: hsl(233, 13%, 49%);
+      background: white;
+      border-radius: 5px;
+    }
   }
 
   h1 {
@@ -103,9 +111,10 @@ body {
     margin: 15px;
   }
 
-  .divider {
+  hr {
     margin: 10px auto;
     border-top: 1px solid #e2e2e9;
+    width: 90%;
 
     &:last-of-type {
       margin-bottom: 20px;
@@ -132,11 +141,5 @@ body {
     border-width: 0;
     margin: 0 auto;
     cursor: pointer;
-
-    &.active {
-      color: hsl(233, 13%, 49%);
-      background: white;
-      border-radius: 5px;
-    }
   }
 }

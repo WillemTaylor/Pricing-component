@@ -1,9 +1,24 @@
 <template>
   <label class="switch">
-    <input type="checkbox" />
+    <input type="checkbox" v-on="listeners" />
     <span class="slider round"></span>
   </label>
 </template>
+
+<script>
+export default {
+  computed: {
+    listeners() {
+      let vm = this;
+      return Object.assign({}, this.$listeners, {
+        input: function(event) {
+          vm.$emit("checked", event.target.checked);
+        }
+      });
+    }
+  }
+};
+</script>
 
 <style>
 .switch {
