@@ -1,29 +1,14 @@
-# pricing-component
+# Pricing Component with Toggle page
 
-## Project setup
-```
-npm install
-```
+This front-end coding challenge was taken from https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### The Challenge
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Within this repo, I have created a pricing component, which displays price for each tier in an annual or monthly price. Project was built using Vue.js framework. A mixture of SCSS and HTML was used to style the page as close to the designs as possible, and Javascript was used to achieve the functionality of the website.
 
-### Run your tests
-```
-npm run test
-```
+### What it does
 
-### Lints and fixes files
-```
-npm run lint
-```
+You should be able to:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- View the optimal layout for the component depending on their device's screen size
+- Control the toggle to display different prices based on Annual and Monthly price
