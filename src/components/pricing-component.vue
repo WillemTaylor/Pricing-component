@@ -70,6 +70,7 @@ export default {
     },
     handleClick() {
       let evt = event.target.parentElement;
+      console.log(evt);
       let tile = document.querySelectorAll(".price-tile");
 
       tile.forEach(el => {
