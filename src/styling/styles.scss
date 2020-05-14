@@ -52,6 +52,95 @@ body {
   }
 }
 
+.login-container {
+  h1 {
+    font-weight: 300;
+    margin-bottom: 40px;
+    padding: 0 10px;
+
+    @media only screen and (min-width: $desktop) {
+      margin-top: 150px;
+    }
+  }
+
+  form {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      height: 110px;
+      width: fit-content;
+
+      @media only screen and (min-width: $desktop) {
+        height: 140px;
+      }
+    }
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #d0cece;
+      height: 45px;
+      padding: 0 10px;
+      color: #6d708d;
+
+      @media only screen and (min-width: $desktop) {
+        height: 55px;
+        width: 400px;
+        border-radius: 10px;
+        font-size: 1.2em;
+      }
+
+      &::placeholder {
+        opacity: 0.6;
+
+        @media only screen and (min-width: $desktop) {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    p {
+      text-align: left;
+      font-size: 0.8em;
+      margin: 5px 0;
+
+      @media only screen and (min-width: $desktop) {
+        font-size: 1em;
+      }
+    }
+
+    .email-invalid,
+    .number-invalid {
+      text-align: left;
+      font-size: 1em;
+      color: #ff7f7f;
+
+      @media only screen and (min-width: $desktop) {
+        font-size: 1.2em;
+      }
+    }
+
+    .submit {
+      width: 60px;
+      height: 35px;
+      text-align: center;
+      letter-spacing: 0.04em;
+      color: #6d708d;
+      margin-right: 115px;
+      font-weight: 900;
+
+      @media only screen and (min-width: $desktop) {
+        height: 40px;
+        width: 80px;
+        margin-right: 318px;
+      }
+    }
+  }
+}
+
 .tile-container {
   @media only screen and (min-width: $desktop) {
     display: flex;
@@ -87,11 +176,7 @@ body {
   }
 
   &.active {
-    background: linear-gradient(
-      to right,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
-    );
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     color: white;
 
     @media only screen and (min-width: $desktop) {
@@ -129,11 +214,7 @@ body {
     width: 90%;
     height: 40px;
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
-    );
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     color: white;
     font-weight: bold;
     letter-spacing: 0.065em;

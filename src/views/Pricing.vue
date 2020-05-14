@@ -59,7 +59,6 @@ import LeftSwirl from '../images/left-swirl.vue';
 import Toggle from '../components/toggle.vue';
 
 export default {
-  name: 'PricingComponent',
   components: {
     RightSwirl,
     LeftSwirl,
